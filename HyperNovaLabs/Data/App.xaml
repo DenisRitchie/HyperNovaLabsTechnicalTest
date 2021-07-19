@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:ExpenseReport"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!--<ResourceDictionary Source="Theme/NoesisTheme.LightOrange.xaml"/>-->
+        <!--<ResourceDictionary Source="pack://application:,,,/Theme;component/Theme/NoesisTheme.LightOrange.xaml" />-->
+        <ResourceDictionary Source="pack://application:,,,/Theme/NoesisTheme.LightOrange.xaml" />
     </Application.Resources>
 </Application>

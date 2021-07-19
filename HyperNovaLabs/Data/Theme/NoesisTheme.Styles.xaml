@@ -4,7 +4,7 @@
   xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
   xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
   xmlns:sys="clr-namespace:System;assembly=mscorlib"
-  xmlns:local="clr-namespace:NoesisGUIExtensions">
+  xmlns:local="clr-namespace:NoesisGUIExtensions;assembly=Noesis.GUI.Extensions">
 
   <sys:Double x:Key="Size.ScrollBar">17</sys:Double>
   <sys:Double x:Key="Size.GroupBox.Border">1</sys:Double>
