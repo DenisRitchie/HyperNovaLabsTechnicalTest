@@ -10,9 +10,9 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #ifndef NS_LICENSE_NAME
-    #define NS_LICENSE_NAME ""
+    #define NS_LICENSE_NAME "NoesisLicensing1"
 #endif
 
 #ifndef NS_LICENSE_KEY
-    #define NS_LICENSE_KEY ""
+    #define NS_LICENSE_KEY "kEryLjkD8i6hPf4XbinURjQ8PAVlgw+P/MRtqxuf+e6s9sjs"
 #endif

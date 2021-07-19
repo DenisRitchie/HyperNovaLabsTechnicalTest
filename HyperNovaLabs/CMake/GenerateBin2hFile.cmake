@@ -28,7 +28,7 @@ function(generate_bin2h_file)
   # cmake_parse_arguments(<prefix> <options> <one_value_keywords> <multi_value_keywords> args...)
   cmake_parse_arguments(BIN2H "${Options}" "${OneValueArgs}" "${MultiValueArgs}" ${ARGN})
 
-  set(BIN2H ${CMAKE_CURRENT_SOURCE_DIR}/Libs/NoesisGUI/Tools/Bin2h/bin2h.py)
+  set(BIN2H ${CMAKE_CURRENT_SOURCE_DIR}/Libs/NoesisGUI/Tools/Bin2h/Bin2h.py)
 
   foreach(Target IN LISTS BIN2H_TARGETS)
     get_filename_component(FileNameWe ${Target} NAME_WE)

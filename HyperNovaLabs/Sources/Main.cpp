@@ -1,6 +1,4 @@
-#include <NsCore/Noesis.h>
-#include <NsCore/ReflectionImplementEmpty.h>
-#include <NsCore/RegisterComponent.h>
+#include <NoesisPCH.h>
 #include <NsApp/EmbeddedXamlProvider.h>
 #include <NsApp/EmbeddedFontProvider.h>
 #include <NsApp/ApplicationLauncher.h>
@@ -8,13 +6,16 @@
 #include <NsApp/Application.h>
 #include <NsApp/Window.h>
 
-#include "App.xaml.bin.h"
-#include "MainWindow.xaml.bin.h"
+namespace
+{
+    #include "App.xaml.bin.h"
+    #include "MainWindow.xaml.bin.h"
+}
 
 using namespace Noesis;
 using namespace NoesisApp;
 
-namespace ExpenseReport
+namespace HyperNovaLabs::ExpenseReport
 {
     class App final : public Application
     {
@@ -29,32 +30,35 @@ namespace ExpenseReport
 
 class AppLauncher final : public ApplicationLauncher
 {
-    private:
-        void RegisterComponents() const override
+private:
+    void RegisterComponents() const override
+    {
+        RegisterComponent<HyperNovaLabs::ExpenseReport::App>();
+        RegisterComponent<HyperNovaLabs::ExpenseReport::MainWindow>();
+    }
+
+    Noesis::Ptr<XamlProvider> GetXamlProvider() const override
+    {
+        EmbeddedXaml xamls[2] =
         {
-            RegisterComponent<ExpenseReport::App>();
-            RegisterComponent<ExpenseReport::MainWindow>();
-        }
+            { "App.xaml", App_xaml },
+            { "MainWindow.xaml", MainWindow_xaml }
+        };
 
-        Noesis::Ptr<XamlProvider> GetXamlProvider() const override
-        {
-            EmbeddedXaml xamls[2] =
-            {
-                { "App.xaml", App_xaml },
-                { "MainWindow.xaml", MainWindow_xaml }
-            };
+        return *new EmbeddedXamlProvider(xamls);
+    }
 
-            return *new EmbeddedXamlProvider(xamls);
-        }
-
-        // Noesis::Ptr<FontProvider> GetFontProvider() const override
-        // {
-        //     EmbeddedFont fonts[] =
-        //     {
-        //     };
-        //     return *new EmbeddedFontProvider(fonts);
-        // }
+    // Noesis::Ptr<FontProvider> GetFontProvider() const override
+    // {
+    //     EmbeddedFont fonts[] =
+    //     {
+    //     };
+    //     return *new EmbeddedFontProvider(fonts);
+    // }
 };
+
+// https://noesisengine.com/trial/
+// https://noesisengine.com/docs/Gui.Core.Licensing.html
 
 int NsMain(int argc, char **argv)
 {
