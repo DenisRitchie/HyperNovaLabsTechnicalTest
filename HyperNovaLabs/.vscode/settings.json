@@ -1,0 +1,40 @@
+{
+    "files.associations": {
+        "*.html.in": "html",
+        "iostream": "cpp",
+        "ios": "cpp",
+        "__locale": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "__string": "cpp",
+        "cstdio": "cpp"
+    },
+    "editor.tabSize": 2,
+    "workbench.editor.showTabs": true,
+    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.intelliSenseCacheSize": 40960,
+    "C_Cpp.default.cStandard": "gnu17",
+    "C_Cpp.default.cppStandard": "gnu++11",
+    "C_Cpp.default.defines": [
+        "__EMSCRIPTEN__"
+    ],
+    "C_Cpp.default.systemIncludePath": [
+        // Emscripten: 2.0.25
+        // "C:\\Projects\\Github\\emsdk\\upstream\\lib\\clang\\13.0.0\\include",
+        // "C:\\Projects\\Github\\emsdk\\upstream\\include\\clang-c",
+        // "C:\\Projects\\Github\\emsdk\\upstream\\emscripten\\system\\include",
+        // "C:\\Projects\\Github\\emsdk\\upstream\\emscripten\\system\\lib\\libc\\musl\\include",
+        // "C:\\Projects\\Github\\emsdk\\upstream\\emscripten\\system\\lib\\libcxx\\include",
+        // "C:\\Projects\\Github\\emsdk\\upstream\\emscripten\\system\\lib\\libcxxabi\\include",
+        
+        // Emscripten: 2.0.0
+        "C:\\Projects\\Github\\emsdk\\upstream\\lib\\clang\\12.0.0\\include",
+        "C:\\Projects\\Github\\emsdk\\upstream\\include",
+        "C:\\Projects\\Github\\emsdk\\upstream\\emscripten\\system\\include",
+        "C:\\Projects\\Github\\emsdk\\upstream\\emscripten\\system\\include\\libc",
+        "C:\\Projects\\Github\\emsdk\\upstream\\emscripten\\system\\include\\libcxx",
+        "C:\\Projects\\Github\\emsdk\\upstream\\emscripten\\system\\lib\\libcxxabi\\include",
+    ],
+    "C_Cpp.default.intelliSenseMode": "clang-x64",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+}

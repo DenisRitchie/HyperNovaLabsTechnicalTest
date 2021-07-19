@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>NoesisGUI - HelloWorld</title>
+    <style>
+      body { margin: 0; }
+      .emscripten { border: 0; margin: 0px; top: 0px; left: 0px; width: 100%; height: 100%; position: absolute; overflow: hidden; display: block; }
+    </style>
+  </head>
+  <body>
+    <canvas class='emscripten' id='canvas' tabindex='-1' oncontextmenu='event.preventDefault()''></canvas>
+    <script type='text/javascript'>
+      var Module = {
+        preRun: [],
+        postRun: [],
+        print: (function() {
+          return function(text) {
+            text = Array.prototype.slice.call(arguments).join(' ');
+            console.log(text);
+          };
+        })(),
+        printErr: function(text) {
+          text = Array.prototype.slice.call(arguments).join(' ');
+          console.error(text);
+        },
+        canvas: (function() {
+          var canvas = document.getElementById('canvas');
+          canvas.addEventListener('webglcontextlost', function(e) { alert('WebGL context lost'); e.preventDefault(); }, false);
+          return canvas;
+        })(),
+        setStatus: function(text) {},
+        monitorRunDependencies: function(left) {}
+      };
+      window.onerror = function(event) {
+        console.log('onerror: ' + event);
+      };
+    </script>
+    <script async src="@PROJECT_NAME@.js"></script>
+  </body>
+</html>
