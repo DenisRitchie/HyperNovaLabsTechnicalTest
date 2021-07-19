@@ -8,16 +8,16 @@
 # https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html#Option-Summary
 # https://gcc.gnu.org/onlinedocs/gcc/Preprocessor-Options.html#Preprocessor-Options
 
-#  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -s USE_WEBGL2=1 -s NO_FILESYSTEM=1 -s WASM=1 -s INITIAL_MEMORY=67108864")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -s USE_WEBGL2=1 -s NO_FILESYSTEM=1 -s WASM=1 -s INITIAL_MEMORY=67108864")
 
 target_compile_options(${PROJECT_NAME}
     PRIVATE -pipe
     PRIVATE -Wall -Werror -Wfatal-errors -Wtype-limits
     PRIVATE -fno-exceptions -frtti -fno-threadsafe-statics
-    PRIVATE -sUSE_WEBGL2=1
-    PRIVATE -sNO_FILESYSTEM=1
-    PRIVATE -sWASM=1
-    PRIVATE -sINITIAL_MEMORY=67108864
+  # PRIVATE -s USE_WEBGL2=1
+  # PRIVATE -s NO_FILESYSTEM=1
+  # PRIVATE -s WASM=1
+  # PRIVATE -s INITIAL_MEMORY=67108864
   # PRIVATE -D_DEBUG
   # PRIVATE -DNS_BUILD
   # PRIVATE -DNS_CONFIG=Debug

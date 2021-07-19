@@ -10,7 +10,11 @@
         "cstdio": "cpp"
     },
     "editor.tabSize": 2,
+    "editor.tabCompletion": "on",
+    "editor.insertSpaces": true,
+    "editor.trimAutoWhitespace": true,
     "workbench.editor.showTabs": true,
+    "workbench.editor.tabSizing": "shrink",
     "C_Cpp.errorSquiggles": "Disabled",
     "C_Cpp.intelliSenseCacheSize": 40960,
     "C_Cpp.default.cStandard": "gnu17",

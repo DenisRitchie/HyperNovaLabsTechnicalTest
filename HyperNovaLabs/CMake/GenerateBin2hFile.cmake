@@ -28,7 +28,7 @@ function(generate_bin2h_file)
   # cmake_parse_arguments(<prefix> <options> <one_value_keywords> <multi_value_keywords> args...)
   cmake_parse_arguments(BIN2H "${Options}" "${OneValueArgs}" "${MultiValueArgs}" ${ARGN})
 
-  set(BIN2H ${CMAKE_CURRENT_SOURCE_DIR}/NoesisGUI/Tools/Bin2h/bin2h.py)
+  set(BIN2H ${CMAKE_CURRENT_SOURCE_DIR}/Libs/NoesisGUI/Tools/Bin2h/bin2h.py)
 
   foreach(Target IN LISTS BIN2H_TARGETS)
     get_filename_component(FileNameWe ${Target} NAME_WE)
@@ -52,7 +52,7 @@ endfunction(generate_bin2h_file)
 # https://gist.github.com/baiwfg2/39881ba703e9c74e95366ed422641609
 # https://samthursfield.wordpress.com/2015/11/21/cmake-dependencies-between-targets-and-files-and-custom-commands/
 
-# set(BIN2H ${CMAKE_CURRENT_SOURCE_DIR}/NoesisGUI/Tools/Bin2h/bin2h.py)
+# set(BIN2H ${CMAKE_CURRENT_SOURCE_DIR}/Libs/NoesisGUI/Tools/Bin2h/bin2h.py)
 # set(BIN2H_OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/Include)
 
 #########################################################################

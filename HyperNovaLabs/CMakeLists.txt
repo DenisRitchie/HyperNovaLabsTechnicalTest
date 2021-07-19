@@ -38,8 +38,8 @@ target_link_libraries(${PROJECT_NAME}
 
 # https://cmake.org/cmake/help/latest/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html
 target_compile_features(${PROJECT_NAME}
-  # PRIVATE cxx_std_20
-    PRIVATE cxx_std_11
+    PRIVATE cxx_std_20
+  # PRIVATE cxx_std_11
 )
 
 include(TargetCompileOptions)
