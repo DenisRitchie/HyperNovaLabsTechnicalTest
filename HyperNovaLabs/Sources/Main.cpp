@@ -3,9 +3,11 @@
 #include <NsApp/ThemeProviders.h>
 #include <NsApp/EmbeddedXamlProvider.h>
 #include <NsApp/EmbeddedFontProvider.h>
+#include <NsApp/EmbeddedTextureProvider.h>
 #include <NsApp/ApplicationLauncher.h>
 #include <NsApp/EntryPoint.h>
 #include <NsApp/Application.h>
+#include <NsApp/MessageBox.h>
 #include <NsApp/Window.h>
 
 namespace
@@ -61,6 +63,13 @@ namespace
 
     #include "App.xaml.bin.h"
     #include "MainWindow.xaml.bin.h"
+
+    #include "File.png.bin.h"
+    #include "FloppyDisk.png.bin.h"
+    #include "FolderClosed.png.bin.h"
+    #include "House.png.bin.h"
+    #include "HyperNovaLabsLogo.png.bin.h"
+    #include "Search.png.bin.h"
 }
 
 using namespace Noesis;
@@ -152,11 +161,31 @@ private:
     //     };
     //     return *new EmbeddedFontProvider(fonts);
     // }
+
+    Noesis::Ptr<Noesis::TextureProvider> GetTextureProvider() const override
+    {
+        EmbeddedTexture textures[] =
+        {
+            { "Images/File.png"             , File_png              },
+            { "Images/FloppyDisk.png"       , FloppyDisk_png        },
+            { "Images/FolderClosed.png"     , FolderClosed_png      },
+            { "Images/House.png"            , House_png             },
+            { "Images/HyperNovaLabsLogo.png", HyperNovaLabsLogo_png },
+            { "Images/Search.png"           , Search_png            },
+        };
+
+        return *new EmbeddedTextureProvider(textures);
+    }
 };
 
 // https://noesisengine.com/trial/
 // https://noesisengine.com/docs/Gui.Core.Licensing.html
 // https://docs.microsoft.com/en-us/dotnet/desktop/wpf/app-development/pack-uris-in-wpf?view=netframeworkdesktop-4.8
+
+// https://www.noesisengine.com/docs/Gui.Core.URIs.html
+// https://www.noesisengine.com/docs/Gui.Core.SDKGuide.html
+// https://www.noesisengine.com/docs/Gui.Core.ApplicationTutorial.html
+
 // <ResourceDictionary Source="pack://application:,,,/Theme;component/Theme/NoesisTheme.LightOrange.xaml" />
 // <ResourceDictionary Source="pack://application:,,,/Theme/NoesisTheme.LightOrange.xaml" />
 

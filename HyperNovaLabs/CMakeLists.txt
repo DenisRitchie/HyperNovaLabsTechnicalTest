@@ -17,6 +17,12 @@ generate_bin2h_file(
   TARGETS
     ${CMAKE_CURRENT_SOURCE_DIR}/Data/App.xaml
     ${CMAKE_CURRENT_SOURCE_DIR}/Data/MainWindow.xaml
+    ${CMAKE_CURRENT_SOURCE_DIR}/Data/Images/File.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/Data/Images/FloppyDisk.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/Data/Images/FolderClosed.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/Data/Images/House.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/Data/Images/HyperNovaLabsLogo.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/Data/Images/Search.png
   DESTINATION
     ${CMAKE_CURRENT_BINARY_DIR}/Include
 )

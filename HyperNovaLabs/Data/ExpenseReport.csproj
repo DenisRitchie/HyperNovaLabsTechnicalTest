@@ -271,13 +271,22 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Images\HyperNovaLabsLogo.png" />
     <Resource Include="Theme\Fonts\PT Root UI_Bold.otf" />
     <Resource Include="Theme\Fonts\PT Root UI_Regular.otf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\File.png" />
+    <Resource Include="Images\FloppyDisk.png" />
+    <Resource Include="Images\FolderClosed.png" />
+    <Resource Include="Images\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\House.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Noesis.GUI.3.0.12\build\net461\Noesis.GUI.targets" Condition="Exists('packages\Noesis.GUI.3.0.12\build\net461\Noesis.GUI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
