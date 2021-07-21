@@ -8,6 +8,20 @@ import "model/Bill.proto";
 
 service ExpenseReportService
 {
+    rpc ListBill(google.protobuf.Empty) returns (ListBillResponse)
+    {
+        option (google.api.http) = {
+            get: "/api/bill"
+        };
+    }
+
+    rpc GetBill(GetBillRequest) returns (HyperNovaLabs.Api.Protos.Models.Bill)
+    {
+        option (google.api.http) = {
+            get: "/api/bill/{bill_id}"
+        };
+    }
+
     rpc CreateBill(CreateBillResquest) returns (CreateBillResponse)
     {
         option (google.api.http) = {
@@ -15,6 +29,16 @@ service ExpenseReportService
             body: "bill"
         };
 	}
+}
+
+message ListBillResponse
+{
+    repeated HyperNovaLabs.Api.Protos.Models.Bill bills = 1;
+}
+
+message GetBillRequest
+{
+    int64 bill_id = 1;
 }
 
 message CreateBillResquest
