@@ -6,3 +6,18 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"
+
+  sqldata:
+    environment:
+      - MSSQL_SA_PASSWORD=Pass@word
+      - MSSQL_PID=Enterprise
+      - MSSQL_TCP_PORT=1433
+      - ACCEPT_EULA=Y
+    ports:
+      - "5433:1433"
+    volumes:
+      - hypernovalabs-sqldata:/var/opt/mssql
+
+volumes:
+  hypernovalabs-sqldata:
+    external: false
