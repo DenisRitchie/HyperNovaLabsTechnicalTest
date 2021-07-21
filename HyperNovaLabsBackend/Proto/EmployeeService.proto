@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package HyperNovaLabs.Api.Protos.Services;
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/field_mask.proto";
+import "model/Employee.proto";
+
+service EmployeeService
+{
+    rpc ListEmployee(google.protobuf.Empty) returns (ListEmployeeResponse)
+    {
+        option (google.api.http) = {
+            get: "/api/employee"
+        };
+    }
+
+    rpc GetEmployee(GetEmployeeRequest) returns (HyperNovaLabs.Api.Protos.Models.Employee)
+    {
+        option (google.api.http) = {
+            get: "/api/employee/{identification}"
+        };
+    }
+
+    rpc CreateEmployee(CreateEmployeeRequest) returns (HyperNovaLabs.Api.Protos.Models.Employee)
+    {
+        option (google.api.http) = {
+            post: "/api/employee"
+            body: "employee"
+        };
+    }
+
+    rpc UpdateEmployee(UpdateEmployeeRequest) returns (HyperNovaLabs.Api.Protos.Models.Employee)
+    {
+        option (google.api.http) = {
+            patch: "/api/employee/{employee.identification}"
+            body: "employee"
+        };
+    }
+
+    rpc DeleteEmployee(DeleteEmployeeRequest) returns (google.protobuf.Empty)
+    {
+        option (google.api.http) = {
+            delete: "/api/employee/{identification}"
+        };
+    }
+}
+
+message ListEmployeeResponse
+{
+    repeated HyperNovaLabs.Api.Protos.Models.Employee employees = 1;
+}
+
+message GetEmployeeRequest
+{
+    string identification = 1;
+}
+
+message CreateEmployeeRequest
+{
+    HyperNovaLabs.Api.Protos.Models.Employee employee = 1;
+}
+
+message UpdateEmployeeRequest
+{
+    HyperNovaLabs.Api.Protos.Models.Employee employee    = 1;
+    google.protobuf.FieldMask                update_mask = 2;
+}
+
+message DeleteEmployeeRequest
+{
+    string identification = 1;
+}

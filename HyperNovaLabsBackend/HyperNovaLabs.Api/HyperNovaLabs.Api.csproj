@@ -21,14 +21,27 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Grpc.HttpApi" Version="0.1.0-alpha.21317.5" />
     <PackageReference Include="Microsoft.AspNetCore.Grpc.Swagger" Version="0.1.0-alpha.21317.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.8" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.14" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="..\Proto\ExpenseReport.proto" GrpcServices="Server" Link="Protos\ExpenseReport.proto" />
+    <Protobuf Include="..\Proto\model\Bill.proto" GrpcServices="Server" Link="Protos\Models\Bill.proto" />
+    <Protobuf Include="..\Proto\model\BillDescription.proto" GrpcServices="Server" Link="Protos\Models\BillDescription.proto" />
+    <Protobuf Include="..\Proto\model\Employee.proto" GrpcServices="Server" Link="Protos\Models\Employee.proto" />
+    
+    <Protobuf Include="..\Proto\EmployeeService.proto" GrpcServices="Server" Link="Protos\EmployeeService.proto" />
+    <Protobuf Include="..\Proto\ExpenseReportService.proto" GrpcServices="Server" Link="Protos\ExpenseReportService.proto" />
   </ItemGroup>
 
 </Project>

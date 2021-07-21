@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package HyperNovaLabs.Api.Protos.Models;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+message BillDescription
+{
+    google.protobuf.Timestamp date        = 1;
+    int32                     quantity    = 2;
+    double                    price       = 3;
+    string                    description = 4;
+    double                    total       = 5;
+}
