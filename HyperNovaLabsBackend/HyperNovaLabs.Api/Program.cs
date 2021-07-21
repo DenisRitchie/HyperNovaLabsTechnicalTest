@@ -12,16 +12,16 @@ namespace HyperNovaLabs.Api
 
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[] Args)
         {
-            CreateHostBuilder(args).Build().Run();
+            CreateHostBuilder(Args).Build().Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
+        public static IHostBuilder CreateHostBuilder(string[] Args) =>
+            Host.CreateDefaultBuilder(Args)
+                .ConfigureWebHostDefaults(WebBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    WebBuilder.UseStartup<Startup>();
                 });
     }
 }

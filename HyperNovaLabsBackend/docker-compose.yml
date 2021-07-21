@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  hypernovalabs.api:
+    image: ${DOCKER_REGISTRY-}hypernovalabsapi
+    build:
+      context: .
+      dockerfile: HyperNovaLabs.Api/Dockerfile
