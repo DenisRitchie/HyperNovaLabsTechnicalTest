@@ -36,12 +36,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="..\Proto\model\Bill.proto" GrpcServices="Server" Link="Protos\Models\Bill.proto" />
-    <Protobuf Include="..\Proto\model\BillDescription.proto" GrpcServices="Server" Link="Protos\Models\BillDescription.proto" />
-    <Protobuf Include="..\Proto\model\Employee.proto" GrpcServices="Server" Link="Protos\Models\Employee.proto" />
+    <Protobuf ProtoRoot="..\Proto" Include="..\Proto\model\Bill.proto" GrpcServices="Server" Link="Protos\Models\Bill.proto" />
+    <Protobuf ProtoRoot="..\Proto" Include="..\Proto\model\BillDescription.proto" GrpcServices="Server" Link="Protos\Models\BillDescription.proto" />
+    <Protobuf ProtoRoot="..\Proto" Include="..\Proto\model\Employee.proto" GrpcServices="Server" Link="Protos\Models\Employee.proto" />
     
-    <Protobuf Include="..\Proto\EmployeeService.proto" GrpcServices="Server" Link="Protos\EmployeeService.proto" />
-    <Protobuf Include="..\Proto\ExpenseReportService.proto" GrpcServices="Server" Link="Protos\ExpenseReportService.proto" />
+    <Protobuf ProtoRoot="..\Proto" Include="..\Proto\EmployeeService.proto" GrpcServices="Server" Link="Protos\EmployeeService.proto" />
+    <Protobuf ProtoRoot="..\Proto" Include="..\Proto\ExpenseReportService.proto" GrpcServices="Server" Link="Protos\ExpenseReportService.proto" />
   </ItemGroup>
 
 </Project>

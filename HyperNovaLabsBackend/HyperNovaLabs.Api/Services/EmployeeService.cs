@@ -7,6 +7,8 @@
     using HyperNovaLabs.Api.Protos.Models;
     using HyperNovaLabs.Api.Protos.Services;
 
+    using Microsoft.EntityFrameworkCore;
+
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -167,6 +169,64 @@
                         Position = Employee.Position,
                         Supervisor = Employee.Supervisor
                     };
+                }
+                else
+                {
+                    Response.Errors.Add($"El empleado con el número de identificación \"{Request.Identification}\" no está registrado.");
+                }
+            }
+            catch (Exception Ex)
+            {
+                while (Ex != null)
+                {
+                    Response.Errors.Add(Ex.Message);
+                    Ex = Ex.InnerException;
+                }
+            }
+
+            return Response;
+        }
+
+        public override async Task<ListOfAnEmployeesBillResponse> ListOfAnEmployeeBills(ListOfAnEmployeesBillRequest Request, ServerCallContext Context)
+        {
+            ListOfAnEmployeesBillResponse Response = new();
+
+            try
+            {
+                var Employee = await Database.Employees.Include(E => E.Bills).ThenInclude(B => B.BillDescriptions)
+                    .SingleOrDefaultAsync(E => E.Identification == Request.Identification);
+
+                if (Employee is not null)
+                {
+                    Response.Bills.Add(Employee.Bills.Select(B => new Bill
+                    {
+                        Concept = B.Concept,
+                        ApprovedBy = B.ApprovedBy,
+                        DateFrom = Timestamp.FromDateTime(DateTime.SpecifyKind(B.DateFrom, DateTimeKind.Utc)),
+                        DateTo = Timestamp.FromDateTime(DateTime.SpecifyKind(B.DateTo, DateTimeKind.Utc)),
+                        BillDescriptions =
+                        {
+                            B.BillDescriptions.Select(Bd => new BillDescription
+                            {
+                                Date = Timestamp.FromDateTime(DateTime.SpecifyKind(Bd.Date, DateTimeKind.Utc)),
+                                Description = Bd.Description,
+                                Price = Bd.Price,
+                                Quantity = Bd.Quantity,
+                                Total = Bd.Quantity * Bd.Price
+                            })
+                        }
+                    }));
+
+                    Response.Employee = new Employee
+                    {
+                        Name = Employee.Name,
+                        Identification = Employee.Identification,
+                        Department = Employee.Department,
+                        Position = Employee.Position,
+                        Supervisor = Employee.Supervisor
+                    };
+
+                    Response.Success = true;
                 }
                 else
                 {

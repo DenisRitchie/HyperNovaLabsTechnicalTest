@@ -5,8 +5,7 @@
     <DockerTargetOS>Linux</DockerTargetOS>
     <ProjectGuid>b6e9f166-a6b3-47f7-aeaf-5b7f06015553</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
-    <!-- <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl> -->
-    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerComposeProjectName>hyper.nova.labs.expense.reports</DockerComposeProjectName>
     <DockerServiceName>hypernovalabs.api</DockerServiceName>
   </PropertyGroup>

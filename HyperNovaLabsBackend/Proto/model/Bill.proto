@@ -4,8 +4,8 @@ package HyperNovaLabs.Api.Protos.Models;
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
-import "BillDescription.proto";
-import "Employee.proto";
+import "model/BillDescription.proto";
+import "model/Employee.proto";
 
 message Bill
 {

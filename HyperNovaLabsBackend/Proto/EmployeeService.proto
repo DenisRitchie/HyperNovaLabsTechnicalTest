@@ -6,6 +6,7 @@ import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
 import "model/Employee.proto";
+import "model/Bill.proto";
 
 service EmployeeService
 {
@@ -43,6 +44,13 @@ service EmployeeService
     {
         option (google.api.http) = {
             delete: "/api/employee/{identification}"
+        };
+    }
+
+    rpc ListOfAnEmployeeBills(ListOfAnEmployeesBillRequest) returns (ListOfAnEmployeesBillResponse)
+    {
+        option (google.api.http) = {
+            get: "/api/employee/{identification}/bills"
         };
     }
 }
@@ -92,4 +100,17 @@ message DeleteEmployeeResponse
     optional HyperNovaLabs.Api.Protos.Models.Employee employee = 1;
     bool                                              success  = 2;
     repeated string                                   errors   = 3;
+}
+
+message ListOfAnEmployeesBillRequest
+{
+    string identification = 1;
+}
+
+message ListOfAnEmployeesBillResponse
+{
+    optional HyperNovaLabs.Api.Protos.Models.Employee employee = 1;
+    repeated HyperNovaLabs.Api.Protos.Models.Bill     bills    = 2;
+    bool                                              success  = 3;
+    repeated string                                   errors   = 4;
 }
