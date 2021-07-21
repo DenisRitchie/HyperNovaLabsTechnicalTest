@@ -23,7 +23,7 @@ service EmployeeService
         };
     }
 
-    rpc CreateEmployee(CreateEmployeeRequest) returns (HyperNovaLabs.Api.Protos.Models.Employee)
+    rpc CreateEmployee(CreateEmployeeRequest) returns (CreateEmployeeResponse)
     {
         option (google.api.http) = {
             post: "/api/employee"
@@ -31,7 +31,7 @@ service EmployeeService
         };
     }
 
-    rpc UpdateEmployee(UpdateEmployeeRequest) returns (HyperNovaLabs.Api.Protos.Models.Employee)
+    rpc UpdateEmployee(UpdateEmployeeRequest) returns (UpdateEmployeeResponse)
     {
         option (google.api.http) = {
             patch: "/api/employee/{employee.identification}"
@@ -39,7 +39,7 @@ service EmployeeService
         };
     }
 
-    rpc DeleteEmployee(DeleteEmployeeRequest) returns (google.protobuf.Empty)
+    rpc DeleteEmployee(DeleteEmployeeRequest) returns (DeleteEmployeeResponse)
     {
         option (google.api.http) = {
             delete: "/api/employee/{identification}"
@@ -62,13 +62,34 @@ message CreateEmployeeRequest
     HyperNovaLabs.Api.Protos.Models.Employee employee = 1;
 }
 
+message CreateEmployeeResponse
+{
+    optional HyperNovaLabs.Api.Protos.Models.Employee employee  = 1;
+    bool                                              has_error = 2;
+    repeated string                                   errors    = 3;
+}
+
 message UpdateEmployeeRequest
 {
     HyperNovaLabs.Api.Protos.Models.Employee employee    = 1;
     google.protobuf.FieldMask                update_mask = 2;
 }
 
+message UpdateEmployeeResponse
+{
+    optional HyperNovaLabs.Api.Protos.Models.Employee employee = 1;
+    bool                                              success  = 2;
+    repeated string                                   errors   = 3;
+}
+
 message DeleteEmployeeRequest
 {
     string identification = 1;
+}
+
+message DeleteEmployeeResponse
+{
+    optional HyperNovaLabs.Api.Protos.Models.Employee employee = 1;
+    bool                                              success  = 2;
+    repeated string                                   errors   = 3;
 }
