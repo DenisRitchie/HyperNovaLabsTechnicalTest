@@ -2,12 +2,18 @@ version: '3.4'
 
 services:
   hypernovalabs.api:
-    image: ${DOCKER_REGISTRY-}hypernovalabsapi
+    image: ${DOCKER_REGISTRY-}hypernovalabs.api
     build:
       context: .
       dockerfile: HyperNovaLabs.Api/Dockerfile
     depends_on:
       - sqldata
+
+  hypernovalabs.gui:
+    image: ${DOCKER_REGISTRY-}hypernovalabs.gui
+    build:
+      context: ../HyperNovaLabs
+      dockerfile: ../HyperNovaLabs/Dockerfile
 
   sqldata:
     image: mcr.microsoft.com/mssql/server:2019-latest

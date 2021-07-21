@@ -2,12 +2,19 @@ version: '3.4'
 
 services:
   hypernovalabs.api:
+    container_name: hypernovalabs.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "80"
+      - "5785:80"
+
+  hypernovalabs.gui:
+    container_name: hypernovalabs.gui
+    ports:
+     - "5965:80"
 
   sqldata:
+    container_name: hypernovalabs.sql-server
     environment:
       - MSSQL_SA_PASSWORD=Pass@word
       - MSSQL_PID=Enterprise
