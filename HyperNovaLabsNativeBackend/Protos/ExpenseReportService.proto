@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package HyperNovaLabs.Api.Protos.Services;
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "Models/Bill.proto";
+
+service ExpenseReportService
+{
+    rpc ListBill(google.protobuf.Empty) returns (ListBillResponse)
+    {
+        option (google.api.http) = {
+            get: "/api/bill"
+        };
+    }
+
+    rpc GetBill(GetBillRequest) returns (HyperNovaLabs.Api.Protos.Models.Bill)
+    {
+        option (google.api.http) = {
+            get: "/api/bill/{bill_id}"
+        };
+    }
+
+    rpc CreateBill(CreateBillResquest) returns (CreateBillResponse)
+    {
+        option (google.api.http) = {
+            post: "/api/bill"
+            body: "bill"
+        };
+	}
+}
+
+message ListBillResponse
+{
+    repeated HyperNovaLabs.Api.Protos.Models.Bill bills = 1;
+}
+
+message GetBillRequest
+{
+    int64 bill_id = 1;
+}
+
+message CreateBillResquest
+{
+    HyperNovaLabs.Api.Protos.Models.Bill bill = 1;
+}
+
+message CreateBillResponse
+{
+    optional HyperNovaLabs.Api.Protos.Models.Bill bill      = 1;
+    bool                                          has_error = 2;
+    repeated string                               errors    = 3;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package HyperNovaLabs.Api.Protos.Models;
+
+message Employee
+{
+    string identification = 1;
+    string name           = 2;
+    string department     = 3;
+    string position       = 4;
+    string supervisor     = 5;
+}

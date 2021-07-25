@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package HyperNovaLabs.Api.Protos.Models;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+import "Models/BillDescription.proto";
+import "Models/Employee.proto";
+
+message Bill
+{
+    string                                                    bill_concept      = 1;
+    google.protobuf.Timestamp                                 date_from         = 2; 
+    google.protobuf.Timestamp                                 date_to           = 3;
+    string                                                    approved_by       = 4;
+    HyperNovaLabs.Api.Protos.Models.Employee                  employee          = 5;
+    repeated HyperNovaLabs.Api.Protos.Models.BillDescription  bill_descriptions = 6;
+}

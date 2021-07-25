@@ -1,0 +1,32 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "*.inc": "cpp"
+    },
+    "editor.tabSize": 2,
+    "editor.tabCompletion": "on",
+    "editor.insertSpaces": true,
+    "editor.trimAutoWhitespace": true,
+    "workbench.list.openMode": "doubleClick",
+    "workbench.editor.openPositioning": "last",
+    "C_Cpp.intelliSenseCacheSize": 40960,
+    "C_Cpp.default.cppStandard": "gnu++17",
+    "C_Cpp.default.cStandard": "gnu17",
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "protoc": {
+        "path": "protoc",
+        "compile_on_save": true,
+        "options": [
+            "--proto_path=/include",
+            "--proto_path=${workspaceRoot}/Protos",
+            "--cpp_out=${workspaceRoot}/build/includes",
+            "--grpc_out=generate_mock_code=true:${workspaceRoot}/build/includes",
+            "--plugin=protoc-gen-grpc=/bin/grpc_cpp_plugin"
+        ]
+    },
+    "cmake.generator": "Unix Makefiles",
+    "cmake.configureOnOpen": true,
+    "cmake.configureSettings": {
+    }
+}
