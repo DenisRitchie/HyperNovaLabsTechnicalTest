@@ -8,6 +8,8 @@ import "google/protobuf/field_mask.proto";
 import "Models/Employee.proto";
 import "Models/Bill.proto";
 
+option cc_enable_arenas = true;
+
 service EmployeeService
 {
     rpc ListEmployee(google.protobuf.Empty) returns (ListEmployeeResponse)

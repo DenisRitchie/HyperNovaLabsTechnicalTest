@@ -6,6 +6,8 @@ import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "Models/Bill.proto";
 
+option cc_enable_arenas = true;
+
 service ExpenseReportService
 {
     rpc ListBill(google.protobuf.Empty) returns (ListBillResponse)

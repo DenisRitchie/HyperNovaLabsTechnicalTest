@@ -1,7 +1,8 @@
-#include <iostream>
+#include "Server.hpp"
+#include <cstdlib>
 
 int main(int argc, char *argv[])
 {
-  std::cout << "grpc\n";
+  ::RunServer();
   return EXIT_SUCCESS;
 }

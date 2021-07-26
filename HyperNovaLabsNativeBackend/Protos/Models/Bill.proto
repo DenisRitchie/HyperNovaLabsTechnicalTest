@@ -7,6 +7,8 @@ import "google/protobuf/duration.proto";
 import "Models/BillDescription.proto";
 import "Models/Employee.proto";
 
+option cc_enable_arenas = true;
+
 message Bill
 {
     string                                                    bill_concept      = 1;

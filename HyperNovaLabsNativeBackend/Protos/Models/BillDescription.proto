@@ -5,6 +5,8 @@ package HyperNovaLabs.Api.Protos.Models;
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
 
+option cc_enable_arenas = true;
+
 message BillDescription
 {
     google.protobuf.Timestamp date        = 1;

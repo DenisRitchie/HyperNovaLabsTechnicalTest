@@ -42,6 +42,6 @@ target_link_libraries(ExpenseReportProtoLib
     ${_protobuf_libprotobuf}
 )
 
-target_include_directories(ExpenseReportProtoLib PUBLIC ${_grpc_proto_generated_dir})
+# target_include_directories(ExpenseReportProtoLib PUBLIC ${_grpc_proto_generated_dir})
 
 target_compile_features(ExpenseReportProtoLib PUBLIC cxx_std_20)

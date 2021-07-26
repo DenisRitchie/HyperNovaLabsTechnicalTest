@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package HyperNovaLabs.Api.Protos.Models;
 
+option cc_enable_arenas = true;
+
 message Employee
 {
     string identification = 1;
