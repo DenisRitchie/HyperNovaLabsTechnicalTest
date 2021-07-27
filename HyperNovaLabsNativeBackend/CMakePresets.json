@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "configurePresets": [
+    {
+      "name": "Hyper-Nova-Labs-Native-Backend",
+      "displayName": "GCC 11.1.0 x86_64-linux-gnu",
+      "description": "Using compilers: C = /bin/x86_64-linux-gnu-gcc-11, CXX = /bin/x86_64-linux-gnu-g++-11",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+        "CMAKE_C_COMPILER": "/bin/x86_64-linux-gnu-gcc-11",
+        "CMAKE_CXX_COMPILER": "/bin/x86_64-linux-gnu-g++-11"
+      }
+    },
+    {
+      "name": "linux-default",
+      "displayName": "Linux Debug",
+      "description": "Target the Windows Subsystem for Linux (WSL) or a remote Linux system.",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
+      },
+      "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": {
+          "hostOS": [
+            "Linux"
+          ]
+        },
+        "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+          "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}",
+          "copyAdditionalIncludeDirectoriesList": [
+          ]
+        }
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Build Hyper-Nova-Labs-Native-Backend",
+      "description": "",
+      "displayName": "",
+      "configurePreset": "Hyper-Nova-Labs-Native-Backend"
+    },
+    {
+      "name": "build linux-default",
+      "description": "",
+      "displayName": "",
+      "configurePreset": "linux-default"
+    }
+  ]
+}

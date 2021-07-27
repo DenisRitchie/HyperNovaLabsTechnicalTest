@@ -15,7 +15,7 @@
     "workbench.list.openMode": "doubleClick",
     "workbench.editor.openPositioning": "last",
     // "C_Cpp.errorSquiggles": "Disabled",
-    // "C_Cpp.intelliSenseCacheSize": 40960,
+    "C_Cpp.intelliSenseCacheSize": 40960,
     "C_Cpp.default.cppStandard": "gnu++17",
     "C_Cpp.default.cStandard": "gnu17",
     "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
@@ -34,5 +34,5 @@
     "cmake.generator": "Unix Makefiles",
     "cmake.configureOnOpen": true,
     "cmake.configureSettings": {
-    },    
+    },
 }

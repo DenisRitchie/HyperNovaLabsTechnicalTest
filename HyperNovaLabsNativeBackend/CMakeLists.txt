@@ -13,8 +13,8 @@ set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${CMAKE_CURRENT_SOURCE_DIR}/CMake")
 
 include(Common)
 
-include_directories(${_grpc_proto_generated_dir})
-include_directories(${_grpc_protobuf_wellknown_include_dir})
+# include_directories(${_grpc_proto_generated_dir})
+# include_directories(${_grpc_protobuf_wellknown_include_dir})
 
 add_subdirectory(Protos)
 add_subdirectory(Backend)

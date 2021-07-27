@@ -23,6 +23,33 @@
 # protoc --grpc_out=generate_mock_code=true:build/includes --cpp_out=build/includes --plugin=protoc-gen-grpc=/bin/grpc_cpp_plugin -I Protos -I /include Protos/ExpenseReportService.proto
 #
 
+
+# Javascript/Node - Client/Server
+# 
+# mkdir -p build/javascript-grpc
+# protoc --js_out=import_style=commonjs,binary:build/javascript-grpc -I Protos -I /include \
+# Protos/google/api/http.proto \
+# Protos/google/api/annotations.proto \
+# Protos/Models/Bill.proto \
+# Protos/Models/BillDescription.proto \
+# Protos/Models/Employee.proto \
+# Protos/EmployeeService.proto \
+# Protos/ExpenseReportService.proto
+# 
+
+# Javascript/Sockets - Client/Server
+# 
+# mkdir -p build/javascript-grpc
+# protoc --js_out=library=HyperNovaLabsJs,binary:build/javascript-grpc -I Protos -I /include \
+# Protos/google/api/http.proto \
+# Protos/google/api/annotations.proto \
+# Protos/Models/Bill.proto \
+# Protos/Models/BillDescription.proto \
+# Protos/Models/Employee.proto \
+# Protos/EmployeeService.proto \
+# Protos/ExpenseReportService.proto
+# 
+
 function(protobuf_generate_grpc_cpp proto_file)
 
   # Proto file: https://cmake.org/cmake/help/latest/command/get_filename_component.html

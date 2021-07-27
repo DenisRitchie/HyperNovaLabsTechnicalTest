@@ -19,7 +19,7 @@ Status ExpenseReportServiceImpl::ListBill(ServerContext *context, const Empty *r
 }
 
 Status ExpenseReportServiceImpl::GetBill(ServerContext *context, const GetBillRequest *request, Bill *response)
-{  
+{
   return Status::OK;
 }
 

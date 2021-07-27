@@ -33,7 +33,8 @@ find_program(_grpc_cpp_plugin_executable grpc_cpp_plugin)
 # set(_grpc_cpp_plugin_executable $<TARGET_FILE:gRPC::grpc_cpp_plugin>)
 
 # Create directory for generated .proto files
-set(_grpc_proto_generated_dir ${CMAKE_BINARY_DIR}/includes)
+# set(_grpc_proto_generated_dir ${CMAKE_BINARY_DIR}/includes)
+set(_grpc_proto_generated_dir ${CMAKE_SOURCE_DIR}/Protos/Includes)
 file(MAKE_DIRECTORY ${_grpc_proto_generated_dir})
 
 # Libs
