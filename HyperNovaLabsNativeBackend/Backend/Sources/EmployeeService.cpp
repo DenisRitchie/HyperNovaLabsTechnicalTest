@@ -20,6 +20,11 @@ Status EmployeeServiceImpl::ListEmployee(ServerContext *context, const Empty *re
 
 Status EmployeeServiceImpl::GetEmployee(ServerContext *context, const GetEmployeeRequest *request, Employee *response)
 {
+  response->set_identification(request->identification());
+  response->set_name("Denis West");
+  response->set_department("Informática");
+  response->set_position("Ingeniero Informático");
+  response->set_supervisor("Ninguno");
   return Status::OK;
 }
 

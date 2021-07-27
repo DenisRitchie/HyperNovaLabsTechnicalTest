@@ -3,7 +3,6 @@ syntax = "proto3";
 package HyperNovaLabs.Api.Protos.Models;
 
 import "google/protobuf/timestamp.proto";
-import "google/protobuf/duration.proto";
 import "Models/BillDescription.proto";
 import "Models/Employee.proto";
 

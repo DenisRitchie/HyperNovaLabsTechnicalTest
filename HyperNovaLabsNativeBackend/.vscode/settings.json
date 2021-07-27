@@ -1,5 +1,7 @@
 {
     "files.associations": {
+        "CMakePresets.json": "jsonc",
+        // "*.tcl.in": ".tcl",
         "iostream": "cpp",
         "*.inc": "cpp",
         "memory": "cpp",
@@ -35,4 +37,7 @@
     "cmake.configureOnOpen": true,
     "cmake.configureSettings": {
     },
+    "cmake.ctestArgs": [
+        "--test-dir", "./Test"
+    ]
 }

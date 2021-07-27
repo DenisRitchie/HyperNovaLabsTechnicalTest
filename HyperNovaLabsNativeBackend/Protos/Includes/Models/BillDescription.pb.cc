@@ -67,20 +67,18 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_Models_2fBillDescription_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\034Models/BillDescription.proto\022\037HyperNov"
   "aLabs.Api.Protos.Models\032\037google/protobuf"
-  "/timestamp.proto\032\036google/protobuf/durati"
-  "on.proto\"\200\001\n\017BillDescription\022(\n\004date\030\001 \001"
-  "(\0132\032.google.protobuf.Timestamp\022\020\n\010quanti"
-  "ty\030\002 \001(\005\022\r\n\005price\030\003 \001(\001\022\023\n\013description\030\004"
-  " \001(\t\022\r\n\005total\030\005 \001(\001B\003\370\001\001b\006proto3"
+  "/timestamp.proto\"\200\001\n\017BillDescription\022(\n\004"
+  "date\030\001 \001(\0132\032.google.protobuf.Timestamp\022\020"
+  "\n\010quantity\030\002 \001(\005\022\r\n\005price\030\003 \001(\001\022\023\n\013descr"
+  "iption\030\004 \001(\t\022\r\n\005total\030\005 \001(\001B\003\370\001\001b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Models_2fBillDescription_2eproto_deps[2] = {
-  &::descriptor_table_google_2fprotobuf_2fduration_2eproto,
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Models_2fBillDescription_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Models_2fBillDescription_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Models_2fBillDescription_2eproto = {
-  false, false, 272, descriptor_table_protodef_Models_2fBillDescription_2eproto, "Models/BillDescription.proto", 
-  &descriptor_table_Models_2fBillDescription_2eproto_once, descriptor_table_Models_2fBillDescription_2eproto_deps, 2, 1,
+  false, false, 240, descriptor_table_protodef_Models_2fBillDescription_2eproto, "Models/BillDescription.proto", 
+  &descriptor_table_Models_2fBillDescription_2eproto_once, descriptor_table_Models_2fBillDescription_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_Models_2fBillDescription_2eproto::offsets,
   file_level_metadata_Models_2fBillDescription_2eproto, file_level_enum_descriptors_Models_2fBillDescription_2eproto, file_level_service_descriptors_Models_2fBillDescription_2eproto,
 };

@@ -23,7 +23,7 @@ target_link_libraries(ExpenseReportBackend
   PRIVATE
     SqlClient
     ExpenseReportDatabase
-    ExpenseReportProtoLib   
+    ExpenseReportProtoLib
 )
 
 target_include_directories(ExpenseReportBackend PRIVATE Includes)

@@ -32,7 +32,6 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include <google/protobuf/timestamp.pb.h>
-#include <google/protobuf/duration.pb.h>
 #include "Models/BillDescription.pb.h"
 #include "Models/Employee.pb.h"
 // @@protoc_insertion_point(includes)

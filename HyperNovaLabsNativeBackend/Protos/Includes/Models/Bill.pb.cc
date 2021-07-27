@@ -69,27 +69,25 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_Models_2fBill_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\021Models/Bill.proto\022\037HyperNovaLabs.Api.P"
   "rotos.Models\032\037google/protobuf/timestamp."
-  "proto\032\036google/protobuf/duration.proto\032\034M"
-  "odels/BillDescription.proto\032\025Models/Empl"
-  "oyee.proto\"\227\002\n\004Bill\022\024\n\014bill_concept\030\001 \001("
-  "\t\022-\n\tdate_from\030\002 \001(\0132\032.google.protobuf.T"
-  "imestamp\022+\n\007date_to\030\003 \001(\0132\032.google.proto"
-  "buf.Timestamp\022\023\n\013approved_by\030\004 \001(\t\022;\n\010em"
-  "ployee\030\005 \001(\0132).HyperNovaLabs.Api.Protos."
-  "Models.Employee\022K\n\021bill_descriptions\030\006 \003"
-  "(\01320.HyperNovaLabs.Api.Protos.Models.Bil"
-  "lDescriptionB\003\370\001\001b\006proto3"
+  "proto\032\034Models/BillDescription.proto\032\025Mod"
+  "els/Employee.proto\"\227\002\n\004Bill\022\024\n\014bill_conc"
+  "ept\030\001 \001(\t\022-\n\tdate_from\030\002 \001(\0132\032.google.pr"
+  "otobuf.Timestamp\022+\n\007date_to\030\003 \001(\0132\032.goog"
+  "le.protobuf.Timestamp\022\023\n\013approved_by\030\004 \001"
+  "(\t\022;\n\010employee\030\005 \001(\0132).HyperNovaLabs.Api"
+  ".Protos.Models.Employee\022K\n\021bill_descript"
+  "ions\030\006 \003(\01320.HyperNovaLabs.Api.Protos.Mo"
+  "dels.BillDescriptionB\003\370\001\001b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Models_2fBill_2eproto_deps[4] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Models_2fBill_2eproto_deps[3] = {
   &::descriptor_table_Models_2fBillDescription_2eproto,
   &::descriptor_table_Models_2fEmployee_2eproto,
-  &::descriptor_table_google_2fprotobuf_2fduration_2eproto,
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Models_2fBill_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Models_2fBill_2eproto = {
-  false, false, 465, descriptor_table_protodef_Models_2fBill_2eproto, "Models/Bill.proto", 
-  &descriptor_table_Models_2fBill_2eproto_once, descriptor_table_Models_2fBill_2eproto_deps, 4, 1,
+  false, false, 433, descriptor_table_protodef_Models_2fBill_2eproto, "Models/Bill.proto", 
+  &descriptor_table_Models_2fBill_2eproto_once, descriptor_table_Models_2fBill_2eproto_deps, 3, 1,
   schemas, file_default_instances, TableStruct_Models_2fBill_2eproto::offsets,
   file_level_metadata_Models_2fBill_2eproto, file_level_enum_descriptors_Models_2fBill_2eproto, file_level_service_descriptors_Models_2fBill_2eproto,
 };

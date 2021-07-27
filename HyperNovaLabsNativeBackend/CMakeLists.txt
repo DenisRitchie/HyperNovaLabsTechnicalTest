@@ -20,6 +20,7 @@ add_subdirectory(Protos)
 add_subdirectory(Backend)
 add_subdirectory(Database)
 add_subdirectory(SqlClient)
+add_subdirectory(Test)
 
 # Useful Variables
 # https://gitlab.kitware.com/cmake/community/-/wikis/doc/cmake/Useful-Variables
