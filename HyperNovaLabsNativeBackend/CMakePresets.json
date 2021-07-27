@@ -1,19 +1,12 @@
+// https://cmake.org/cmake/help/latest/manual/cmake-presets.7.html
 {
-  "version": 2,
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 20,
+    "patch": 0
+  },
   "configurePresets": [
-    {
-      "name": "Hyper-Nova-Labs-Native-Backend",
-      "displayName": "GCC 11.1.0 x86_64-linux-gnu",
-      "description": "Using compilers: C = /bin/x86_64-linux-gnu-gcc-11, CXX = /bin/x86_64-linux-gnu-g++-11",
-      "generator": "Ninja",
-      "binaryDir": "${sourceDir}/out/build/${presetName}",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-        "CMAKE_C_COMPILER": "/bin/x86_64-linux-gnu-gcc-11",
-        "CMAKE_CXX_COMPILER": "/bin/x86_64-linux-gnu-g++-11"
-      }
-    },
     {
       "name": "linux-default",
       "displayName": "Linux Debug",
@@ -28,28 +21,49 @@
         "microsoft.com/VisualStudioSettings/CMake/1.0": {
           "hostOS": [
             "Linux"
-          ]
+          ],
+          "intelliSenseMode": "linux-gcc-x64",
+          "intelliSenseOptions": {
+            "useCompilerDefaults": true,
+            "additionalCompilerArgs": [
+            ]
+          },
+          "enableMicrosoftCodeAnalysis": true
         },
         "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
           "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}",
+          "copyBuildOutput": true,
+          "copySourcesOptions": {
+            "outputVerbosity": "Verbose"
+          },
           "copyAdditionalIncludeDirectoriesList": [
+            "${sourceDir}/Protos/Includes"
           ]
         }
+      }
+    },
+    {
+      "name": "Hyper-Nova-Labs-Native-Backend",
+      "displayName": "GCC 11.1.0 x86_64-linux-gnu",
+      "description": "Using compilers: C = /bin/x86_64-linux-gnu-gcc-11, CXX = /bin/x86_64-linux-gnu-g++-11",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+        "CMAKE_C_COMPILER": "/bin/x86_64-linux-gnu-gcc-11",
+        "CMAKE_CXX_COMPILER": "/bin/x86_64-linux-gnu-g++-11"
       }
     }
   ],
   "buildPresets": [
     {
-      "name": "Build Hyper-Nova-Labs-Native-Backend",
-      "description": "",
-      "displayName": "",
-      "configurePreset": "Hyper-Nova-Labs-Native-Backend"
+      "name": "build linux-default",
+      "configurePreset": "linux-default"
     },
     {
-      "name": "build linux-default",
-      "description": "",
-      "displayName": "",
-      "configurePreset": "linux-default"
+      "name": "Build Hyper-Nova-Labs-Native-Backend",
+      "configurePreset": "Hyper-Nova-Labs-Native-Backend"
     }
   ]
 }
