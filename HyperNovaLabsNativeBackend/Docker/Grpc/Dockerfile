@@ -13,14 +13,14 @@ WORKDIR /source/grpc
 RUN mkdir -p third_party/abseil-cpp/cmake/build
 WORKDIR /source/grpc/third_party/abseil-cpp/cmake/build
 RUN cmake -DCMAKE_POSITION_INDEPENDENT_CODE=TRUE ../..
-RUN make -j
+RUN make -j 14
 RUN make install
 WORKDIR /source/grpc
 
 RUN mkdir -p cmake/build
 WORKDIR /source/grpc/cmake/build
 RUN cmake -DgRPC_INSTALL=ON -DgRPC_BUILD_TESTS=OFF ../.. 
-RUN make -j
+RUN make -j 14
 RUN make install
 
 WORKDIR /
