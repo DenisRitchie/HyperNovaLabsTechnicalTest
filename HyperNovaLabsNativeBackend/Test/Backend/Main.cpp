@@ -1,9 +1,8 @@
-#include "EmployeeServiceClient.hpp"
-#include <stdio.h>
+#include "EmployeeServiceClientTest.hpp"
 
-int main(int argv, char *argc[])
+int main(int argc, char *argv[])
 {
-  printf("Este es mi primer test en cmake\n");
-  return 0;
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
 }
 

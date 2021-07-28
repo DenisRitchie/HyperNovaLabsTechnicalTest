@@ -29,3 +29,21 @@ target_link_libraries(ExpenseReportBackend
 target_include_directories(ExpenseReportBackend PRIVATE Includes)
 
 target_compile_features(ExpenseReportBackend PUBLIC cxx_std_20)
+
+# https://cmake.org/cmake/help/latest/command/install.html
+
+install(
+  TARGETS ExpenseReportBackend
+  CONFIGURATIONS Debug
+  RUNTIME DESTINATION Debug/bin # .out files -> .exe
+  LIBRARY DESTINATION Debug/bin # .so  files -> .dll
+  ARCHIVE DESTINATION Debug/bin # .a   files -> .lib
+)
+
+install(
+  TARGETS ExpenseReportBackend
+  CONFIGURATIONS Release
+  RUNTIME DESTINATION Release/bin # .out files -> .exe
+  LIBRARY DESTINATION Release/bin # .so  files -> .dll
+  ARCHIVE DESTINATION Release/bin # .a   files -> .lib
+)

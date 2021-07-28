@@ -23,3 +23,20 @@ target_link_libraries(ExpenseReportDatabase
 )
 
 target_compile_features(ExpenseReportDatabase PUBLIC cxx_std_20)
+
+
+install(
+  TARGETS ExpenseReportDatabase
+  CONFIGURATIONS Debug
+  RUNTIME DESTINATION Debug/bin # .out files -> .exe
+  LIBRARY DESTINATION Debug/bin # .so  files -> .dll
+  ARCHIVE DESTINATION Debug/bin # .a   files -> .lib
+)
+
+install(
+  TARGETS ExpenseReportDatabase
+  CONFIGURATIONS Release
+  RUNTIME DESTINATION Release/bin # .out files -> .exe
+  LIBRARY DESTINATION Release/bin # .so  files -> .dll
+  ARCHIVE DESTINATION Release/bin # .a   files -> .lib
+)

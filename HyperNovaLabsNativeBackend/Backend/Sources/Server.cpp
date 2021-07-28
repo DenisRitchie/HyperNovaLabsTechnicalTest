@@ -7,6 +7,7 @@
 
 #include "EmployeeService.hpp"
 #include "ExpenseReportService.hpp"
+#include "GrpcServerInfo.hpp"
 
 using ::grpc::Server;
 using ::grpc::ServerBuilder;
@@ -17,7 +18,7 @@ using namespace ::HyperNovaLabs::Api::Protos::Services;
 
 void RunServer()
 {
-  std::string server_address("0.0.0.0:50051");
+  std::string server_address(::HyperNovaLabs::Native::Backend::GrpcServerInfo::ServerAddress);
 
   EmployeeServiceImpl employee_service;
   ExpenseReportServiceImpl expense_report_service;

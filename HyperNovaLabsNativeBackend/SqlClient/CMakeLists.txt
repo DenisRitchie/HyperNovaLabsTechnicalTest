@@ -30,3 +30,19 @@ target_sources(SqlClient
 target_include_directories(SqlClient PUBLIC ${PROJECT_SOURCE_DIR}/Include)
 
 target_compile_features(SqlClient PUBLIC cxx_std_20)
+
+install(
+  TARGETS SqlClient
+  CONFIGURATIONS Debug
+  RUNTIME DESTINATION Debug/bin # .out files -> .exe
+  LIBRARY DESTINATION Debug/bin # .so  files -> .dll
+  ARCHIVE DESTINATION Debug/bin # .a   files -> .lib
+)
+
+install(
+  TARGETS SqlClient
+  CONFIGURATIONS Release
+  RUNTIME DESTINATION Release/bin # .out files -> .exe
+  LIBRARY DESTINATION Release/bin # .so  files -> .dll
+  ARCHIVE DESTINATION Release/bin # .a   files -> .lib
+)

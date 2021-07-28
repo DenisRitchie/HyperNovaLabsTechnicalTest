@@ -9,6 +9,8 @@
 
 #include "EmployeeService.grpc.pb.h"
 
+#include "MockEmployeeStore.hpp"
+
 // Logic and data behind the server's behavior.
 class EmployeeServiceImpl final : public ::HyperNovaLabs::Api::Protos::Services::EmployeeService::Service
 {
@@ -27,6 +29,9 @@ public:
   virtual ::grpc::Status UpdateEmployee(::grpc::ServerContext *context, const ::HyperNovaLabs::Api::Protos::Services::UpdateEmployeeRequest *request, ::HyperNovaLabs::Api::Protos::Services::UpdateEmployeeResponse *response) override;
   virtual ::grpc::Status DeleteEmployee(::grpc::ServerContext *context, const ::HyperNovaLabs::Api::Protos::Services::DeleteEmployeeRequest *request, ::HyperNovaLabs::Api::Protos::Services::DeleteEmployeeResponse *response) override;
   virtual ::grpc::Status ListOfAnEmployeeBills(::grpc::ServerContext *context, const ::HyperNovaLabs::Api::Protos::Services::ListOfAnEmployeesBillRequest *request, ::HyperNovaLabs::Api::Protos::Services::ListOfAnEmployeesBillResponse *response) override;
+
+private:
+  HyperNovaLabs::Native::Backend::Mock::MockEmployeeStore m_Store;
 };
 
 #endif // __EMPLOYEESERVICE_H__

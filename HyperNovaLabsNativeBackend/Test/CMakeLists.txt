@@ -10,6 +10,8 @@ find_package(Threads REQUIRED)
 # Enable ExternalProject CMake module
 include(ExternalProject)
 
+# https://cmake.org/cmake/help/latest/module/ExternalProject.html
+# https://gist.github.com/ClintLiddick/51deffb768a7319e715071aa7bd3a3ab
 # Download and install GoogleTest
 ExternalProject_Add(
   gtest

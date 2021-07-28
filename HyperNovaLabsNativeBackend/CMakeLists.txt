@@ -16,6 +16,8 @@ include(Common)
 # include_directories(${_grpc_proto_generated_dir})
 # include_directories(${_grpc_protobuf_wellknown_include_dir})
 
+include_directories(${CMAKE_SOURCE_DIR}/Common/Includes)
+
 add_subdirectory(Protos)
 add_subdirectory(Backend)
 add_subdirectory(Database)

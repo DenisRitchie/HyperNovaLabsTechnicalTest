@@ -1,14 +1,19 @@
 {
     "files.associations": {
         "CMakePresets.json": "jsonc",
-        // "*.tcl.in": ".tcl",
         "iostream": "cpp",
         "*.inc": "cpp",
         "memory": "cpp",
         "string": "cpp",
         "string_view": "cpp",
         "algorithm": "cpp",
-        "cstdlib": "cpp"
+        "cstdlib": "cpp",
+        "optional": "cpp",
+        "vector": "cpp",
+        "ranges": "cpp",
+        "iterator": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp"
     },
     "editor.tabSize": 2,
     "editor.tabCompletion": "on",
@@ -36,8 +41,9 @@
     "cmake.generator": "Unix Makefiles",
     "cmake.configureOnOpen": true,
     "cmake.configureSettings": {
+        "CMAKE_INSTALL_PREFIX": "${workspaceFolder}/build/Publish",
     },
     "cmake.ctestArgs": [
-        "--test-dir", "./Test"
+        "--test-dir", "Test"
     ]
 }

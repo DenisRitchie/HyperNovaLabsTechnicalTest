@@ -11,7 +11,8 @@ message(STATUS "Building ${PROJECT_NAME} v${PROJECT_VERSION}: ${PROJECT_DESCRIPT
 add_executable(TestBackend
   Main.cpp
   EmployeeServiceClient.hpp
-  EmployeeServiceClient.cpp
+  EmployeeServiceClientTest.hpp
+  EmployeeServiceClientTest.cpp
 )
 
 target_link_libraries(TestBackend
