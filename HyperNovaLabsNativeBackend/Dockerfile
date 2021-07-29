@@ -1,5 +1,5 @@
 # Imagen Base
-FROM alpine:3.14 AS base
+FROM ubuntu:20.04 AS base
 RUN mkdir -p /app
 WORKDIR /app
 EXPOSE 50051
@@ -55,5 +55,30 @@ RUN cmake --build /source/build --config Release --target install -j 14 --
 FROM base AS final
 LABEL Name=HyperNovaLabsNativeBackend Version=0.0.1
 WORKDIR /app
-COPY --from=publish /source/build/publish/Release/bin .
-ENTRYPOINT ["ExpenseReportBackend"]
+
+COPY --from=publish /source/build/publish/Release/bin/ExpenseReportBackend .
+COPY --from=publish /source/build/publish/Release/bin/libSqlClient.so /usr/lib
+COPY --from=publish /source/build/publish/Release/bin/libExpenseReportDatabase.so /usr/lib
+
+COPY --from=publish /usr/lib/x86_64-linux-gnu/libnsl.so.2.0.1       /usr/lib/x86_64-linux-gnu/
+COPY --from=publish /lib/x86_64-linux-gnu/libtirpc.so.3.0.0         /usr/lib/x86_64-linux-gnu/
+COPY --from=publish /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2 /usr/lib/x86_64-linux-gnu/
+COPY --from=publish /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3        /usr/lib/x86_64-linux-gnu/
+COPY --from=publish /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1    /usr/lib/x86_64-linux-gnu/
+COPY --from=publish /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1 /usr/lib/x86_64-linux-gnu/
+COPY --from=publish /lib/x86_64-linux-gnu/libkeyutils.so.1.9        /usr/lib/x86_64-linux-gnu/
+COPY --from=publish /usr/local/lib64/libstdc++.so.6.0.29            /usr/lib64
+
+RUN ln -s /usr/lib/x86_64-linux-gnu/libnsl.so.2.0.1       /usr/lib/x86_64-linux-gnu/libnsl.so
+RUN ln -s /usr/lib/x86_64-linux-gnu/libnsl.so.2.0.1       /usr/lib/x86_64-linux-gnu/libnsl.so.2
+RUN ln -s /usr/lib/x86_64-linux-gnu/libtirpc.so.3.0.0     /usr/lib/x86_64-linux-gnu/libtirpc.so.3
+RUN ln -s /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2 /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2
+RUN ln -s /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3        /usr/lib/x86_64-linux-gnu/libkrb5.so.3
+RUN ln -s /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1    /usr/lib/x86_64-linux-gnu/libk5crypto.so.3
+RUN ln -s /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1 /usr/lib/x86_64-linux-gnu/libkrb5support.so.0
+RUN ln -s /usr/lib/x86_64-linux-gnu/libkeyutils.so.1.9    /usr/lib/x86_64-linux-gnu/libkeyutils.so.1
+RUN ln -s -f /usr/lib64/libstdc++.so.6.0.29               /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+RUN ln -s /usr/lib64/libstdc++.so.6.0.29                  /usr/lib64/libstdc++.so
+RUN ln -s /usr/lib64/libstdc++.so.6.0.29                  /usr/lib64/libstdc++.so.6
+
+ENTRYPOINT ["./ExpenseReportBackend"]
