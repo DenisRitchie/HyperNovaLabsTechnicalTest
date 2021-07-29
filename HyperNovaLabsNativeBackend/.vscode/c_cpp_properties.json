@@ -3,6 +3,9 @@
         {
             "name": "Linux",
             "includePath": [
+                "/include", // Grpc Libray Headers
+                "${workspaceFolder}/Protos/Includes",
+                "${workspaceFolder}/Database/Includes",
                 "${workspaceFolder}/build/Test/gtest/src/gtest/googletest/include",
                 "${workspaceFolder}/build/Test/gtest/src/gtest/googlemock/include"
             ],

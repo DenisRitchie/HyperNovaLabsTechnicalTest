@@ -45,5 +45,6 @@
     },
     "cmake.ctestArgs": [
         "--test-dir", "Test"
-    ]
+    ],
+    "workbench.tree.indent": 20
 }

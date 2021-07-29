@@ -14,7 +14,8 @@ add_library(SqlClient SHARED "")
 add_library(HyperNovaLabs::SqlClient ALIAS SqlClient)
 
 target_sources(SqlClient
-  PUBLIC  
+  PUBLIC
+    ${PROJECT_SOURCE_DIR}/Includes/SqlHeaders.hpp
     ${PROJECT_SOURCE_DIR}/Includes/SqlClientFactory.hpp
     ${PROJECT_SOURCE_DIR}/Includes/SqlCommand.hpp
     ${PROJECT_SOURCE_DIR}/Includes/SqlConnection.hpp
@@ -27,7 +28,7 @@ target_sources(SqlClient
     ${PROJECT_SOURCE_DIR}/Sources/SqlParameter.cpp
 )
 
-target_include_directories(SqlClient PUBLIC ${PROJECT_SOURCE_DIR}/Include)
+target_include_directories(SqlClient PUBLIC ${PROJECT_SOURCE_DIR}/Includes)
 
 target_compile_features(SqlClient PUBLIC cxx_std_20)
 

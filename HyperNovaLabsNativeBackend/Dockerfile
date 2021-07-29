@@ -56,6 +56,17 @@ FROM base AS final
 LABEL Name=HyperNovaLabsNativeBackend Version=0.0.1
 WORKDIR /app
 
+# TODO: Install the Microsoft ODBC driver for SQL Server
+
+# https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15#ubuntu17
+# http://www.unixodbc.org/
+
+# odbcinst --version
+# unixODBC 2.3.7
+
+# odbcinst -q -d
+# [ODBC Driver 17 for SQL Server]
+
 COPY --from=publish /source/build/publish/Release/bin/ExpenseReportBackend .
 COPY --from=publish /source/build/publish/Release/bin/libSqlClient.so /usr/lib
 COPY --from=publish /source/build/publish/Release/bin/libExpenseReportDatabase.so /usr/lib

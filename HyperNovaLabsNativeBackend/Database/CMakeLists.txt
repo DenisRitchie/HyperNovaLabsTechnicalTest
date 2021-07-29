@@ -22,8 +22,9 @@ target_link_libraries(ExpenseReportDatabase
     SqlClient
 )
 
-target_compile_features(ExpenseReportDatabase PUBLIC cxx_std_20)
+target_include_directories(ExpenseReportDatabase PUBLIC ${PROJECT_SOURCE_DIR}/Includes)
 
+target_compile_features(ExpenseReportDatabase PUBLIC cxx_std_20)
 
 install(
   TARGETS ExpenseReportDatabase

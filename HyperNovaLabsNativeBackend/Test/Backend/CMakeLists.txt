@@ -6,7 +6,7 @@ project(TestBackend
   DESCRIPTION "Test project for the backend"
 )
 
-message(STATUS "Building ${PROJECT_NAME} v${PROJECT_VERSION}: ${PROJECT_DESCRIPTION}")
+message(STATUS "Building Test Project \"${PROJECT_NAME}\" v${PROJECT_VERSION}: ${PROJECT_DESCRIPTION}")
 
 add_executable(TestBackend
   Main.cpp
