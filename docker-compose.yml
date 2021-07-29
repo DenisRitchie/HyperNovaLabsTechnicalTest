@@ -3,7 +3,7 @@ version: '3.4'
 services:
   hypernovalabs.native.backend:
     image: technical-test/hypernovalabs.native.backend
-    container_name: technical-test/hypernovalabs.native.backend
+    container_name: technical_test.hypernovalabs.native.backend
     build:
       context: HyperNovaLabsNativeBackend
       dockerfile: Dockerfile
@@ -12,7 +12,7 @@ services:
 
   hypernovalabs.web:
     image: technical-test/hypernovalabs.web
-    container_name: technical-test/hypernovalabs.web
+    container_name: technical_test.hypernovalabs.web
     build:
       context: HyperNovaLabs
       dockerfile: Dockerfile
