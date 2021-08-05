@@ -18,8 +18,7 @@ target_sources(ExpenseReportDatabase
 )
 
 target_link_libraries(ExpenseReportDatabase
-  PRIVATE
-    SqlClient
+  PUBLIC SqlClient
 )
 
 target_include_directories(ExpenseReportDatabase PUBLIC ${PROJECT_SOURCE_DIR}/Includes)

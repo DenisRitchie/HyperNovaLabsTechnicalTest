@@ -19,6 +19,7 @@
     "editor.tabCompletion": "on",
     "editor.insertSpaces": true,
     "editor.trimAutoWhitespace": true,
+    "workbench.tree.indent": 20,
     "workbench.list.openMode": "doubleClick",
     "workbench.editor.openPositioning": "last",
     // "C_Cpp.errorSquiggles": "Disabled",
@@ -40,11 +41,11 @@
     },
     "cmake.generator": "Unix Makefiles",
     "cmake.configureOnOpen": true,
+    "cmake.exportCompileCommandsFile": true,
     "cmake.configureSettings": {
-        "CMAKE_INSTALL_PREFIX": "${workspaceFolder}/build/Publish",
+        "CMAKE_INSTALL_PREFIX": "${workspaceFolder}/build/Publish"
     },
     "cmake.ctestArgs": [
         "--test-dir", "Test"
-    ],
-    "workbench.tree.indent": 20
+    ]
 }
