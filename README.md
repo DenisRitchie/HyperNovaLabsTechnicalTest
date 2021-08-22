@@ -26,7 +26,7 @@ con un Backend nativo en C++ gRPC y administrado en C# ASP .NET 5 gRPC.
 * Instalar CMake v3.21 o Mayor :point_right: [Descargar](https://github.com/Kitware/CMake/releases)
 * Instalar C++ gRPC v1.39.0 :point_right: [Guía](https://grpc.io/docs/languages/cpp/quickstart/)
 * Instalar Ninja :point_right: [Descargar](https://github.com/ninja-build/ninja/releases)
-* Instalar Microsoft ODBC driver for SQL Server (Linux) :point_right: [Guía](https://grpc.io/docs/languages/cpp/quickstart/)
+* Instalar Microsoft ODBC driver for SQL Server (Linux) :point_right: [Guía](https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15)
 
 ## Pasos para correr el proyecto: Frontend(C++) / Backend(C#)
 
